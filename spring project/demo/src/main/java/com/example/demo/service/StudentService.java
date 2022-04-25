@@ -33,6 +33,10 @@ public class StudentService {
 		studentDAO.delete(student);
 	}
 	
+	public void deleteBulk() {
+		 studentDAO.deleteBulk();
+	}
+	
 	public List<Student> getAll(){
 		return studentDAO.getAll();
 	}

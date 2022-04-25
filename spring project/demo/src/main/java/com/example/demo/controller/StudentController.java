@@ -54,6 +54,10 @@ public class StudentController {
 		studentService.delete(stuId);
 	}
 	
+	@DeleteMapping("/student")
+	public void deleteBulk() {
+		 studentService.deleteBulk();
+	}
 	@GetMapping("/student")
 	public List<Student> getAll(){
 		return studentService.getAll();

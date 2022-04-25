@@ -31,6 +31,10 @@ public class StudentDAO {
 		String query = "DELETE FROM STUDENT WHERE id= "+student.getId();
 		return jdbcTemplate.update(query);
 	}
+	public int deleteBulk() {
+		String query = "Delete from student";
+		return jdbcTemplate.update(query);
+	}
 	
 	public List<Student> getAll(){
 		String query = "SELECT * FROM student";
