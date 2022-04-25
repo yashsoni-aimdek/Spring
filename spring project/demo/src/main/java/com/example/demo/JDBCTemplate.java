@@ -6,6 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import com.example.demo.dao.StudentDAO;
+import com.example.demo.model.Student;
 
 @SpringBootApplication
 public class JDBCTemplate implements CommandLineRunner {
@@ -22,5 +23,6 @@ public class JDBCTemplate implements CommandLineRunner {
 		// TODO Auto-generated method stub
 		
 	}
+	
 
 }

@@ -17,13 +17,13 @@ public class StudentDAO {
 	
 	public int insert(Student student) {
 		
-		String query = "INSERT INTO student VALUES ("+student.getId()+",'"+student.getFname()+"','"+student.getLname()+"',"+student.getAge()+")";
+		String query = "INSERT INTO student VALUES ("+student.getId()+",'"+student.getFname()+"','"+student.getLname()+"','"+student.getEmail()+"',"+student.getAge()+")";
 		return jdbcTemplate.update(query);
 	}
 	
 	public int update(Student student) {
 		
-		String query = "UPDATE student SET fname='"+student.getFname()+"',lname='"+student.getLname()+"',age = "+student.getAge()+" WHERE id = "+student.getId();
+		String query = "UPDATE student SET fname='"+student.getFname()+"',lname='"+student.getLname()+"','"+student.getEmail()+"',age = "+student.getAge()+" WHERE id = "+student.getId();
 		return jdbcTemplate.update(query);
 	}
 	

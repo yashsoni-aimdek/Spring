@@ -1,0 +1,37 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.example.demo.dao.StudentDAO;
+import com.example.demo.model.Student;
+import com.example.demo.repository.StudentRepository;
+
+@SpringBootApplication
+public class JDBCTemplate implements CommandLineRunner {
+
+	public static void main(String[] args) {
+		SpringApplication.run(JDBCTemplate.class, args);
+	}
+
+	@Autowired
+	private StudentDAO studentDAO;
+	
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public CommandLineRunner run(StudentRepository studentRepository) throws Exception {
+		return (String[] args)->{
+			Student student1 = new Student(4,"Yash","Soni","yashdsoni.ys@gmail.com",23);
+			Student student2 = new Student(5,"Pradip","karmakar","pradipkarmakar.pk@gmail.com",22);
+			
+			studentRepository.save(student1);
+		};
+	}
+
+}

@@ -1,0 +1,20 @@
+package com.example.demo.studentexception;
+
+import java.util.HashMap;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.BAD_REQUEST)
+
+public class Map {
+
+	@ExceptionHandler(MethodArgumentNotValidException.class)
+	public Map<String,String> handleValidationExceptions(MethodArgumentNotValidException ex){
+		Map<String, String> errors = new HashMap<>();
+	}
+	
+	
+}
