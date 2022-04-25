@@ -1,0 +1,10 @@
+package com.example.demo.model;
+
+public class student {
+	
+	private int id;
+	private String fname;
+	private int age;
+	private String lname;
+
+}
