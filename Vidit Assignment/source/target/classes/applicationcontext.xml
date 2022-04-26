@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<context:property-placeholder location="classpath:application.properties" />
+	<bean id="circle" class="com.springdemo.Circle">
+		<constructor-arg value="${circle.radius}"></constructor-arg>
+	</bean>
+	
+	<bean id="triangle" class="com.springdemo.Triangle">
+		<constructor-arg value="${triangle.height}"></constructor-arg>
+		<constructor-arg value="${triangle.base}"></constructor-arg>
+	</bean>
+	
+	
+	<bean id="cone" class="com.springdemo.Cone"
+			init-method="coneInitMethod">
+		<constructor-arg ref="circle"></constructor-arg>
+		<constructor-arg ref="triangle"></constructor-arg>
+	</bean>
+	
+</beans>
